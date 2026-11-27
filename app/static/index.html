@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b55">
+  <meta name="description" content="Simple financial learning in your language, by voice or text.">
+  <title>Awaaz Finance — Apni Bhasha. Apne Paise.</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Awaaz Finance home"><span class="brand-mark" aria-hidden="true">आ</span><span>Awaaz <b>Finance</b></span></a>
+    <label class="language-label" for="language">Language
+      <select id="language" aria-label="Choose language"><option value="en">English</option><option value="hi">हिन्दी</option></select>
+    </label>
+  </header>
+  <main id="main" class="page-shell">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="eyebrow" data-i18n="eyebrow">MONEY, MADE EASIER</p>
+        <h1 id="welcome-title" data-i18n="welcome">Your money questions,<br>in your own words.</h1>
+        <p class="intro" data-i18n="intro">Ask about savings, loans, or insurance. We’ll explain it simply, one step at a time.</p>
+      </div>
+      <div class="welcome-art" aria-hidden="true"><span class="sun"></span><span class="plant">⌁</span><span class="art-note">₹</span></div>
+    </section>
+
+    <section class="ask-card" aria-labelledby="ask-title">
+      <div class="ask-heading"><div><p class="eyebrow" data-i18n="start">LET’S START</p><h2 id="ask-title" data-i18n="how">What would you like to know?</h2></div><span class="step-badge">01 <span data-i18n="ask">ASK</span></span></div>
+      <div class="voice-notice" id="voice-notice" data-i18n="voiceNotice">Voice input is handled by your browser’s speech service. Depending on your browser, audio may be processed by its provider. You can type instead.</div>
+      <div class="composer">
+        <button id="mic-button" class="mic-button" type="button" aria-label="Tap and speak"><span aria-hidden="true">🎙</span><span data-i18n="tapSpeak">Tap and speak</span></button>
+        <span class="or-label" data-i18n="orType">or type</span>
+        <form id="ask-form" class="text-form"><label class="visually-hidden" for="question" data-i18n="questionLabel">Your question</label><input id="question" maxlength="500" autocomplete="off" placeholder="e.g. What is a SIP?" required><button class="send-button" type="submit" aria-label="Send question">➜</button></form>
+      </div>
+      <p id="voice-status" class="voice-status" role="status" aria-live="polite" data-i18n="ready">Ready when you are. Your words will appear here before we answer.</p>
+      <div id="transcript-review" class="transcript-review" hidden><p><strong data-i18n="heard">We heard:</strong> <span id="transcript-text"></span></p><button id="edit-transcript" class="text-button" type="button" data-i18n="edit">Edit</button><button id="confirm-transcript" class="small-primary" type="button" data-i18n="askThis">Ask this</button></div>
+      <div class="examples-row"><span data-i18n="tryAsk">Try asking</span><div id="examples" class="example-chips"></div></div>
+    </section>
+
+    <section id="answer-panel" class="answer-panel" aria-live="polite" aria-label="Answer" hidden>
+      <div class="answer-top"><span class="answer-icon" aria-hidden="true">✳</span><span class="eyebrow" data-i18n="yourAnswer">YOUR ANSWER</span><button id="speak-answer" class="text-button speak-button" type="button">🔊 <span data-i18n="listen">Listen</span></button></div>
+      <p id="answer-text" class="answer-text"></p><p id="answer-meta" class="answer-meta"></p>
+    </section>
+
+    <section class="topics-section" aria-labelledby="topics-title"><div class="section-heading"><div><p class="eyebrow" data-i18n="explore">EXPLORE A TOPIC</p><h2 id="topics-title" data-i18n="topics">Start with what matters to you</h2></div><span class="section-note" data-i18n="chooseCard">Choose a card to learn</span></div>
+      <div class="topic-grid">
+        <button class="topic-card" type="button" data-topic="banking"><span class="topic-icon bank" aria-hidden="true">▤</span><span class="topic-title" data-i18n="banking">Banking</span><span class="topic-sub" data-i18n="bankingSub">Accounts &amp; basics</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="topic-card" type="button" data-topic="savings"><span class="topic-icon save" aria-hidden="true">◉</span><span class="topic-title" data-i18n="savings">Savings</span><span class="topic-sub" data-i18n="savingsSub">Plan for tomorrow</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="topic-card" type="button" data-topic="loan"><span class="topic-icon loan" aria-hidden="true">↗</span><span class="topic-title" data-i18n="loans">Loans</span><span class="topic-sub" data-i18n="loansSub">Understand the cost</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="topic-card" type="button" data-topic="insurance"><span class="topic-icon insure" aria-hidden="true">♡</span><span class="topic-title" data-i18n="insurance">Insurance</span><span class="topic-sub" data-i18n="insuranceSub">Know your cover</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section class="calculators-section" aria-labelledby="calc-title"><div class="section-heading"><div><p class="eyebrow" data-i18n="tools">SIMPLE TOOLS</p><h2 id="calc-title" data-i18n="calculators">Try a calculator</h2></div><span class="section-note" data-i18n="illustrative">Illustrative estimates, explained</span></div>
+      <div class="calculator-list"><button class="calculator-card" type="button" data-calculator="savings"><span class="calc-icon">＋</span><span><strong data-i18n="savingsCalc">Savings</strong><small data-i18n="savingsCalcSub">Add up monthly contributions</small></span><span class="card-arrow">→</span></button><button class="calculator-card" type="button" data-calculator="fd"><span class="calc-icon">◷</span><span><strong data-i18n="fdCalc">Fixed deposit</strong><small data-i18n="fdCalcSub">Estimate maturity and interest</small></span><span class="card-arrow">→</span></button><button class="calculator-card" type="button" data-calculator="emi"><span class="calc-icon">₹</span><span><strong data-i18n="emiCalc">EMI</strong><small data-i18n="emiCalcSub">Understand a monthly instalment</small></span><span class="card-arrow">→</span></button><button class="calculator-card" type="button" data-calculator="sip"><span class="calc-icon">⌁</span><span><strong data-i18n="sipCalc">SIP estimate</strong><small data-i18n="sipCalcSub">Explore an illustrative scenario</small></span><span class="card-arrow">→</span></button></div>
+    </section>
+
+    <section class="safety-note"><span class="shield" aria-hidden="true">✓</span><p><strong data-i18n="safeTitle">Your safety comes first.</strong> <span data-i18n="safeText">We never need your OTP, UPI PIN, password, CVV, or bank details. This is for learning—not financial advice. Estimates are illustrative; returns are not guaranteed.</span></p></section>
+    <section id="calculator-panel" class="calculator-panel" aria-live="polite" hidden></section>
+    <div class="footer-actions"><button id="clear-button" type="button" class="clear-button" data-i18n="clear">Clear conversation</button><span data-i18n="localNote">No conversation is saved after you leave this page.</span></div>
+  </main>
+  <footer><span>AWAaz FINANCE</span><span>Apni Bhasha. Apne Paise. Apne Faisle.</span></footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
